@@ -35,7 +35,7 @@ public class App {
         */
 
         values values = new values();
-        System.out.println("Alpha:" + values.Alpha + " Beta:" + values.Beta + " Delta:" + values.Delta + " Epsilon:" + values.Epsilon);
+        System.out.println("Alpha:" + values.Alpha + " Beta:" + values.Beta + " Delta:" + values.Delta + " Epsilon:" + values.Epsilon + " Gamma:" + values.Iota + " Iota:" + values.Lambda + " Lambda:" + values.Gamma + " Omega:" + values.Omega + " total:" + values.Total);
         /*This is where your code goes, good luck */
 
     }
