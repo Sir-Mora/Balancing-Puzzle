@@ -3,9 +3,13 @@
 This is a short puzzle I created in java to learn java and just for fun.
 The puzzle is as follows.
 <br><br>
-Given there are the 8 values.
-and there are 8 functions that convert 2 values to 2 other values, as well as 1 function that converts 4 values into 4 other values.
-And that you may only use those functions to modify the values. <Br>
+Given The following infomation: <br>
+There are 8 types of Tokens. (Alpha, Beta, Delta, Epsilon, Gamma, Iota, Lambda, & Omega) <br>
+There are 8 functions that convert 2 Tokens to 2 other Tokens, as well as 1 function that converts 4 Tokens into 4 other Tokens.<br>
+You may only use those functions to modify the values. <Br>
+<br>
+you are set forth with the following situation:
+You have been given a random amount of each token ranging from 
 Balance the values so that they are as equal as possible
 <br><br>
 These are the values<br>
