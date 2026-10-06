@@ -86,7 +86,10 @@ class values{
     public void swap(){
         foldingParent(Alpha, Beta, Delta, Epsilon);
         foldingParent(Gamma, Iota, Lambda, Omega);
-
+    }
+     public void swapBack(){
+        foldingParent(Delta, Epsilon, Alpha, Beta);
+        foldingParent(Lambda, Omega, Gamma, Iota);
     }
 
 }
