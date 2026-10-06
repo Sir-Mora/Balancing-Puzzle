@@ -1,38 +1,8 @@
 import java.util.Random;
 
-
 public class App {
     public static void main(String[] args) throws Exception {
         
-        /*
-        Given there are the 8 values.
-        and there are 8 functions that convert 2 values to 2 other values, as well as 1 function that converts 4 values into 4 other values.
-        And that you may only use those functions to modify the values
-        Balance the values so that they are as equal as possible
-
-        These are the values
-        A Alpha
-        B Beta
-        D Delta
-        E Epsilon
-        G Gamma
-        I Iota
-        L Lambda
-        O Omega
-
-        These are the folding functions
-        A O	==>	B E
-        L B	==> A D
-        D B	==>	E I
-        A E	==>	D G
-        E G	==>	I O
-        D I	==>	G L
-        I L	==>	B O
-        G O	==>	A L
-
-        This is the swapping function
-        A B G I ==> D E L O
-        */
 
         values values = new values();
         System.out.println("Alpha:" + values.Alpha + " Beta:" + values.Beta + " Delta:" + values.Delta + " Epsilon:" + values.Epsilon + " Gamma:" + values.Iota + " Iota:" + values.Lambda + " Lambda:" + values.Gamma + " Omega:" + values.Omega + " total:" + values.Total);
@@ -44,16 +14,33 @@ public class App {
 class values{
     Random rand = new Random();
 
-    int Alpha = rand.nextInt(10)+1;
-    int Beta = rand.nextInt(10)+1;
-    int Delta = rand.nextInt(10)+1;
-    int Epsilon = rand.nextInt(10)+1;
-    int Gamma = rand.nextInt(10)+1;
-    int Iota = rand.nextInt(10)+1;
-    int Lambda = rand.nextInt(10)+1;
-    int Omega = rand.nextInt(10)+1;
+    int Alpha;
+    int Beta;
+    int Delta;
+    int Epsilon;
+    int Gamma;
+    int Iota;
+    int Lambda;
+    int Omega;
 
-    int Total = Alpha + Beta + Delta + Epsilon + Gamma + Iota + Lambda + Omega;
+    int Total;
+
+    public values(){
+        Alpha = rand.nextInt(10)+1;
+        Beta = rand.nextInt(10)+1;
+        Delta = rand.nextInt(10)+1;
+        Epsilon = rand.nextInt(10)+1;
+        Gamma = rand.nextInt(10)+1;
+        Iota = rand.nextInt(10)+1;
+        Lambda = rand.nextInt(10)+1;
+        Omega = rand.nextInt(10)+1;
+        Total = Alpha + Beta + Delta + Epsilon + Gamma + Iota + Lambda + Omega;
+        
+        int remander = Total % 8;
+        if (remander != 0){
+            Omega += remander;
+        }
+    }
     public void foldingParent(int input1, int input2, int output1, int output2){
         if(input1 == 0 || input2 == 0){
             return;
