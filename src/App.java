@@ -3,11 +3,21 @@ import java.util.Random;
 public class App {
     public static void main(String[] args) throws Exception {
         
+        //these ones are preset
         tokens tokens_preset = new tokens(22, 18, 12, 23, 28, 25, 14, 25);
         System.out.println("Alpha:" + tokens_preset.Alpha.value + " Beta:" + tokens_preset.Beta.value + " Delta:" + tokens_preset.Delta.value + " Epsilon:" + tokens_preset.Epsilon.value + " Gamma:" + tokens_preset.Iota.value + " Iota:" + tokens_preset.Lambda.value + " Lambda:" + tokens_preset.Gamma.value + " Omega:" + tokens_preset.Omega.value);
+        solution(tokens_preset);
+        System.out.println("Alpha:" + tokens_preset.Alpha.value + " Beta:" + tokens_preset.Beta.value + " Delta:" + tokens_preset.Delta.value + " Epsilon:" + tokens_preset.Epsilon.value + " Gamma:" + tokens_preset.Iota.value + " Iota:" + tokens_preset.Lambda.value + " Lambda:" + tokens_preset.Gamma.value + " Omega:" + tokens_preset.Omega.value);
 
+        //these ones are randomized
         tokens tokens = new tokens();
         System.out.println("Alpha:" + tokens.Alpha.value + " Beta:" + tokens.Beta.value + " Delta:" + tokens.Delta.value + " Epsilon:" + tokens.Epsilon.value + " Gamma:" + tokens.Iota.value + " Iota:" + tokens.Lambda.value + " Lambda:" + tokens.Gamma.value + " Omega:" + tokens.Omega.value);
+        solution(tokens_preset);
+        System.out.println("Alpha:" + tokens_preset.Alpha.value + " Beta:" + tokens_preset.Beta.value + " Delta:" + tokens_preset.Delta.value + " Epsilon:" + tokens_preset.Epsilon.value + " Gamma:" + tokens_preset.Iota.value + " Iota:" + tokens_preset.Lambda.value + " Lambda:" + tokens_preset.Gamma.value + " Omega:" + tokens_preset.Omega.value);
+
+
+    }
+    static void solution(tokens tokens){
         /*This is where your code goes, good luck */
 
     }
