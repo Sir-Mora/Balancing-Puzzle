@@ -4,51 +4,45 @@ public class App {
     public static void main(String[] args) throws Exception {
         
 
-        values values = new values();
-        System.out.println("Alpha:" + values.Alpha + " Beta:" + values.Beta + " Delta:" + values.Delta + " Epsilon:" + values.Epsilon + " Gamma:" + values.Iota + " Iota:" + values.Lambda + " Lambda:" + values.Gamma + " Omega:" + values.Omega + " total:" + values.Total);
+        tokens tokens = new tokens();
+        System.out.println("Alpha:" + tokens.Alpha.value + " Beta:" + tokens.Beta.value + " Delta:" + tokens.Delta.value + " Epsilon:" + tokens.Epsilon.value + " Gamma:" + tokens.Iota.value + " Iota:" + tokens.Lambda.value + " Lambda:" + tokens.Gamma.value + " Omega:" + tokens.Omega.value);
         /*This is where your code goes, good luck */
 
     }
 }
 
-class values{
+class Token {
+    int value;
+
+    Token(int value) {
+        this.value = value;
+    }
+}
+class tokens{
     Random rand = new Random();
 
-    int Alpha;
-    int Beta;
-    int Delta;
-    int Epsilon;
-    int Gamma;
-    int Iota;
-    int Lambda;
-    int Omega;
+    Token Alpha = new Token(rand.nextInt(20)+11);
+    Token Beta = new Token(rand.nextInt(20)+11);
+    Token Delta = new Token(rand.nextInt(20)+11);
+    Token Epsilon = new Token(rand.nextInt(20)+11);
+    Token Gamma = new Token(rand.nextInt(20)+11);
+    Token Iota = new Token(rand.nextInt(20)+11);
+    Token Lambda = new Token(rand.nextInt(20)+11);
+    Token Omega = new Token(rand.nextInt(20)+11);
 
-    int Total;
+    public tokens(){
 
-    public values(){
-        Alpha = rand.nextInt(10)+1;
-        Beta = rand.nextInt(10)+1;
-        Delta = rand.nextInt(10)+1;
-        Epsilon = rand.nextInt(10)+1;
-        Gamma = rand.nextInt(10)+1;
-        Iota = rand.nextInt(10)+1;
-        Lambda = rand.nextInt(10)+1;
-        Omega = rand.nextInt(10)+1;
-        Total = Alpha + Beta + Delta + Epsilon + Gamma + Iota + Lambda + Omega;
-        
-        int remander = Total % 8;
-        if (remander != 0){
-            Omega += remander;
-        }
     }
-    public void foldingParent(int input1, int input2, int output1, int output2){
-        if(input1 == 0 || input2 == 0){
+
+    public void foldingParent(Token input1, Token input2, Token output1, Token output2){
+        if(input1.value == 0 || input2.value == 0){
             return;
         }
-        input1--;
-        input2--;
-        output1++;
-        output2++;
+        input1.value--;
+        input2.value--;
+        output1.value++;
+        output2.value++;
+
     }
     
     public void AOtoBE() {
@@ -86,8 +80,9 @@ class values{
     public void swap(){
         foldingParent(Alpha, Beta, Delta, Epsilon);
         foldingParent(Gamma, Iota, Lambda, Omega);
+
     }
-     public void swapBack(){
+    public void swapBack(){
         foldingParent(Delta, Epsilon, Alpha, Beta);
         foldingParent(Lambda, Omega, Gamma, Iota);
     }
